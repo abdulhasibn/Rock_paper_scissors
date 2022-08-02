@@ -24,11 +24,13 @@
 }  
 
 let input;
+let computerSelection;
 
 function checkForWinner(playerChoice, computerChoice){
     input = prompt("Enter Your Choice. rock , paper or scissors : ");
     playerChoice = input.toLowerCase();
-    computerChoice = getComputerChoice();
+    computerSelection = getComputerChoice();
+    computerChoice = computerSelection;
     if (playerChoice == "rock" && computerChoice == "rock"){
         return "It's a tie";
     } else if  (playerChoice == "rock" && computerChoice == "scissors"){
@@ -52,9 +54,21 @@ function checkForWinner(playerChoice, computerChoice){
 }
 
 function game(){
+    let playerScore = 0;
+    let computerScore = 0;
     for (i = 0; i < 5; i++){
-        console.log(checkForWinner());
-        console.log("Player's Choice : " + input, ", Computer's Choice: " + getComputerChoice());
+        let result = checkForWinner();
+        console.log(result);
+        console.log("Player's Choice : " + input, ", Computer's Choice: " , computerSelection);
+        let positiveRes = new RegExp("You won!*");
+        let negativeRes = new RegExp("You lose!*");
+        if (positiveRes.test(result)){
+            playerScore = ++playerScore; 
+        } else if (negativeRes.test(result)){
+            computerScore = ++computerScore;
+        } 
+        console.log("Player's Score: " + playerScore, ", Computer's Score: " + computerScore);
+        console.log(" ");
     }
 }
 game();
