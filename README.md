@@ -1,7 +1,7 @@
 # Rock_paper_scissors
 In project I am going to use the skills I have learnt to create a rock, paper, scissors game.
 
-Psuedocode for the program.
+Pseudocode for the program.
 
 //A Function that gets a random output with the choices of "Rock , Paper and Scissors"
 // to act as the computer's side.

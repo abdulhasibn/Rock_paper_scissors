@@ -1,3 +1,5 @@
+//Pseudocode for the program.
+
 //A Function that gets a random output with the choices of "Rock , Paper and Scissors"
 // to act as the computer's side.
   //no parameter required.
@@ -27,7 +29,13 @@ let input;
 let computerSelection;
 
 function checkForWinner(playerChoice, computerChoice){
-    input = prompt("Enter Your Choice. rock , paper or scissors : ");
+    let validInput = false;
+    while(!validInput){
+        input = prompt("Enter Your Choice. rock , paper or scissors : ");
+        if (input == "rock" || input == "paper" || input == "scissors"){
+            validInput = true;
+        }
+    }
     playerChoice = input.toLowerCase();
     computerSelection = getComputerChoice();
     computerChoice = computerSelection;
