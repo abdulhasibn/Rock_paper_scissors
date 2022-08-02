@@ -31,7 +31,7 @@ let computerSelection;
 function checkForWinner(playerChoice, computerChoice){
     let validInput = false;
     while(!validInput){
-        input = prompt("Enter Your Choice. rock , paper or scissors : ");
+        input = prompt("Enter Your Choice. rock , paper or scissors (Enter a valid input): ");
         if (input == "rock" || input == "paper" || input == "scissors"){
             validInput = true;
         }
