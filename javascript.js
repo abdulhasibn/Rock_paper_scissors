@@ -70,5 +70,9 @@ function game(){
         console.log("Player's Score: " + playerScore, ", Computer's Score: " + computerScore);
         console.log(" ");
     }
+    let finalResult = playerScore > computerScore ? " Congratulations!!! You Won the Computer.":
+    computerScore > playerScore ? "Sorry! Computer won the game.":
+    "It's a tie. No one wins.";
+    console.log(finalResult);
 }
 game();
