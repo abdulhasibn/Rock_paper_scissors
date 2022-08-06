@@ -30,10 +30,9 @@ function checkForWinner(playerChoice, computerChoice){
     } 
     
 }
-
+let playerScore = 0;
+let computerScore = 0;
 function playGame(){
-    let playerScore = 0;
-    let computerScore = 0;
     let result = checkForWinner();
     const score = document.querySelector(".para1")
     score.textContent = result;
@@ -52,12 +51,21 @@ function playGame(){
     playerRes.textContent = "Player's Choice : " + playerSelection;
     const computerRes  = document.querySelector(".computer_choice");
     computerRes.textContent = "Computer's Choice: " + computerSelection;
-    let finalResult = playerScore > computerScore ? " Congratulations! You Won the Computer.":
-    computerScore > playerScore ? "Sorry! Computer won the game.":
-    "It's a tie. No one wins.";
+    let finalResult;
+    if (playerScore >= 5 || computerScore >= 5){
+        if (playerScore >= 5){
+            finalResult = " Congratulations! You Won the Computer.";
+        } else if(computerScore >= 5){
+            finalResult = "Sorry! Computer won the game.";
+        }
+    }
     const scoreRes = document.querySelector(".para2");
     scoreRes.textContent = finalResult;
-    
+    if (playerScore > 5 || computerScore > 5){
+        buttons.forEach((button) => {
+            button.addEventListener('click', window.location.reload());
+        });
+    }
 }
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) =>{
@@ -66,4 +74,3 @@ buttons.forEach((button) =>{
         playGame();
     })
 });
-
