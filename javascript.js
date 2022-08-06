@@ -52,18 +52,21 @@ function playGame(){
     const computerRes  = document.querySelector(".computer_choice");
     computerRes.textContent = "Computer's Choice: " + computerSelection;
     let finalResult;
-    if (playerScore >= 5 || computerScore >= 5){
-        if (playerScore >= 5){
+    if (playerScore === 5 || computerScore === 5){
+        if (playerScore === 5){
             finalResult = " Congratulations! You Won the Computer.";
-        } else if(computerScore >= 5){
+        } else if(computerScore === 5){
             finalResult = "Sorry! Computer won the game.";
         }
     }
-    const scoreRes = document.querySelector(".para2");
-    scoreRes.textContent = finalResult;
-    if (playerScore > 5 || computerScore > 5){
-        buttons.forEach((button) => {
-            button.addEventListener('click', window.location.reload());
+    if (playerScore === 5 || computerScore === 5){
+        const modal = document.querySelector("#modal");
+        const modalMessage = document.querySelector(".modal_msg");
+        modalMessage.textContent = finalResult;
+        modal.showModal();
+        const closeModal = document.querySelector(".close_btn");
+        closeModal.addEventListener("click", () => {
+            modal.close(), window.location.reload();
         });
     }
 }

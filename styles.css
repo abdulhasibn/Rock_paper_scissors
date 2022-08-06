@@ -86,5 +86,22 @@ h1{
     display: flex;
     justify-content: center;
     gap: 2em;
-
+}
+.modal{
+    padding: 8em;
+}
+.modal_msg{
+    font-size: 2rem;
+}
+.close_btn{
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+}
+.close_btn:hover{
+    cursor: pointer;
+    transform: scale(1.2);
 }
